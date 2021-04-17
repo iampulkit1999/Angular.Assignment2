@@ -1,0 +1,48 @@
+<div class="container">
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Employee Id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Department</th>
+            <th scope="col">City</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td>{{employee.id}}</td>
+                <td>{{employee.fName}}</td>
+                <td>{{employee.lName}}</td>
+                <td>{{employee.dept}}</td>
+                <td>{{employee.city}}</td>
+                <td>{{employee.mail}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- <input value={{a}}>
+    <button (click)="valuechange()">d</button>
+    <p>{{a}}</p> -->
+    <!-- <input [(ngModel)] ='a'>
+<p>{{a}}</p> -->
+    <br>
+    <br>
+    <br>
+
+    <button (click)="display = !display">Edit</button>
+
+    <br>
+    <br>
+    <br>
+
+    <div *ngIf="display">
+        Employee ID : <input type="text" [(ngModel)]="EditEmployeeId" required><br>
+        Employee First Name : <input type="text" [(ngModel)]="employees[EditEmployeeId - 1].fName" required><br>
+        Employee Last Name : <input type="text" [(ngModel)]="employees[EditEmployeeId - 1].lName" required><br>
+        Employee Department : <input type="text" [(ngModel)]="employees[EditEmployeeId- 1].dept" required><br>
+        Employee City :<input type="text" [(ngModel)]="employees[EditEmployeeId- 1].city" required><br>
+        Employee Email : <input type="text" [(ngModel)]="employees[EditEmployeeId - 1].mail" required><br>
+        <button>Update</button>
+    </div>
+</div>
